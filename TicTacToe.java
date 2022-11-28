@@ -24,6 +24,10 @@ public class TicTacToe{
   */
 
   private boolean PlacePeice(int row, int col){
-    
+    boolean avaliable = true;
+    if(board[row][col] != ' '){
+      avaliable = false;
+    }
+    return avaliable;
   }
 }
