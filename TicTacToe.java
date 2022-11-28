@@ -28,6 +28,10 @@ public class TicTacToe{
     if(board[row][col] != ' '){
       avaliable = false;
     }
+    if(avaliable = true){
+      
+    }
+    
     return avaliable;
   }
-}
+} 
