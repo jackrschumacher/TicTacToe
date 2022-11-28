@@ -1,9 +1,10 @@
+import java.util.*;
 public class TicTacToe{
   private char [][] board;
   // When turn is 0, the X player is playing
   // When turn is 1, the 0 player is playing
   private int turn;
-
+  
 
 
 // Description: initializes the board variable to have empty spaces using the space charachter in a 3*3 grid
