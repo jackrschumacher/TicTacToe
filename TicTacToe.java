@@ -54,7 +54,10 @@ public class TicTacToe{
   // Return the charachter of the winner (x or o) if there is one
   // , otherwise return a space ' '
   private char CheckVertical(int row, int col){
-    if
+    for(int i = 0; i <= 2; i++){
+      if(Check)
+    }
+    }
   }
   
 } 
