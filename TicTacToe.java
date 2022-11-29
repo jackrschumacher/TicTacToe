@@ -30,7 +30,14 @@ public class TicTacToe{
       avaliable = false;
     }
     if(avaliable = true){
-      
+      if(turn == 0){
+        board[row][col] = 'x';
+        turn = -1;
+      }
+      else{
+        board[row][col] = 'o';
+        turn = 0; 
+      }
     }
     
     return avaliable;
