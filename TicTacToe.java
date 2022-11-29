@@ -42,4 +42,13 @@ public class TicTacToe{
     
     return avaliable;
   }
+  // check to see if someone wins
+  // Ex: If someone chooses the center of the board, loop up, left, right for 3 in a row
+  // Also checks diagonally in both Directions to see if there is 3 in a row
+  // 4 Options -> 4 "Helper Methods"
+  private char CheckWinner(int row, int col){
+    
+    
+  }
+  
 } 
