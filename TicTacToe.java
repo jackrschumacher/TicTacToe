@@ -83,12 +83,17 @@ public class TicTacToe{
   // If count is less than 3, return ' '
   // If statement at tend to see if count is high enough to win
   private char CheckUpRightDiagonal(int row, int col){
-    char charToMatch = board[row][col];
-    int count = 0;
-    for(int i = 0; i < board[0].length; i++){
-      
+    int count = 1;
+    char charToMach = board[row][col]l
+
+    int currentRow = row;
+    int currentCol = col;
+
+    while(currentRow + 1 < board.length 
+          && currentCol - 1 >= 0)
+    
     }
-    for(int i = 0; i < )
+    
   }
   
 }
