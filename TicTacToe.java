@@ -89,6 +89,10 @@ public class TicTacToe{
     int currentRow = row;
     int currentCol = col;
 
+    // While loop checks three things, first is that I am not already on the bottom row
+    // Second is that we are not already on the farthest left column
+    // third is that the next charachter matches the start peice
+    // If all those things work out, then we should inrease our counter and check the NEXT spot
     while(
     (currentRow + 1 < board.length && currentCol - 1 >= 0)
     && board[currentRow + 1][currentCol - 1] == charToMatch
@@ -96,8 +100,23 @@ public class TicTacToe{
         currentRow++;
         currentCol--;
         count++;  
-        }
-          }
+    }
+
+    currentRow = row;
+    currentCol = col;
+    // While loop checks three things, first is that I am not already on the bottom row
+    // Second is that we are not already on the farthest right column
+    // third is that the next charachter matches the start peice
+    // If all those things work out, then we should inrease our counter and check the NEXT spot
+    while(
+    (currentRow + 1 < board.length && currentCol - 1 >= 0)
+    && board[currentRow + 1][currentCol - 1] == charToMatch
+    ){
+        currentRow++;
+        currentCol--;
+        count++;  
+    }
+          
     
     }
     
