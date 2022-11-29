@@ -84,13 +84,20 @@ public class TicTacToe{
   // If statement at tend to see if count is high enough to win
   private char CheckUpRightDiagonal(int row, int col){
     int count = 1;
-    char charToMach = board[row][col]l
+    char charToMatch = board[row][col];
 
     int currentRow = row;
     int currentCol = col;
 
-    while(currentRow + 1 < board.length 
-          && currentCol - 1 >= 0)
+    while(
+    (currentRow + 1 < board.length && currentCol - 1 >= 0)
+    && board[currentRow + 1][currentCol - 1] == charToMatch
+    ){
+        currentRow++;
+        currentCol--;
+        count++;  
+        }
+          }
     
     }
     
