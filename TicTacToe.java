@@ -38,10 +38,12 @@ public class TicTacToe{
         board[row][col] = 'o';
         turn = 0; 
       }
-    }
-    
+  
     return avaliable;
   }
+    
+    
+  
   // check to see if someone wins
   // Ex: If someone chooses the center of the board, loop up, left, right for 3 in a row
   // Also checks diagonally in both Directions to see if there is 3 in a row
@@ -54,10 +56,39 @@ public class TicTacToe{
   // Return the charachter of the winner (x or o) if there is one
   // , otherwise return a space ' '
   private char CheckVertical(int row, int col){
-    for(int i = 0; i <= 2; i++){
-      if(Check)
-    }
-    }
+    char charToMatch = board[row][col];
+
+    for(int i =0; i < board.length; i++){
+      if(board[i][col] != charToMatch){
+        return ' ';
+      }
+    return charToMatch;
   }
   
-} 
+  
+  private char CheckHorizontal(int row, int col){
+    char charToMatch = board[row][col];
+
+    for(int i =0; i < board[0].length; i++){
+      if(board[row][i] != charToMatch){
+        return ' ';
+      }
+    }
+    return charToMatch;
+  } 
+  // Using the ROW and COUMN of a placed peice, check down-left and 
+  // Up-Right until we either reach the end of the board, or we run into a peice
+  // That doesent match the place one
+  // Then, if count is 3 or greater return that charachter
+  // If count is less than 3, return ' '
+  // If statement at tend to see if count is high enough to win
+  private char CheckUpRightDiagonal(int row, int col){
+    char charToMatch = board[row][col];
+    int count = 0;
+    for(int i = 0; i < board[0].length; i++){
+      
+    }
+    for(int i = 0; i < )
+  }
+  
+}
