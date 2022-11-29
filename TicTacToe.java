@@ -50,5 +50,11 @@ public class TicTacToe{
     
     
   }
+  // In the COUMN placed, check all 3 spaces to see if they match for whoever's turn it is
+  // Return the charachter of the winner (x or o) if there is one
+  // , otherwise return a space ' '
+  private char CheckVertical(int row, int col){
+    if
+  }
   
 } 
