@@ -94,6 +94,64 @@ public class TicTacToe{
     // third is that the next charachter matches the start peice
     // If all those things work out, then we should inrease our counter and check the NEXT spot
     while(
+    (currentRow - 1 >= 0 && currentCol - 1 >= 0)
+    && board[currentRow - 1][currentCol - 1] == charToMatch
+    ){
+        currentRow++;
+        currentCol--;
+        count++;  
+    }
+
+    currentRow = row;
+    currentCol = col;
+    // While loop checks three things, first is that I am not already on the bottom row
+    // Second is that we are not already on the farthest right column
+    // third is that the next charachter matches the start peice
+    // If all those things work out, then we should inrease our counter and check the NEXT spot
+    while(
+    (currentRow + 1 < board.length && currentCol + 1 < board[0].length)
+    && board[currentRow + 1][currentCol + 1] == charToMatch
+    ){
+        currentRow--;
+        currentCol++;
+        count++;  
+    }
+
+    // Check if count is greater than or equal to 3, if so, turn player is winner
+    // Otherwise, there is no winner this turn
+    // Return either charToMatch or ' '
+
+    if(count >= 3){
+      return charToMatch;
+    }
+    else{
+      return ' ';
+    }
+          
+    
+    }
+    
+  }
+  
+
+  // Using the ROW and COUMN of a placed peice, check up-left and 
+  // down-Right until we either reach the end of the board, or we run into a peice
+  // That doesent match the place one
+  // Then, if count is 3 or greater return that charachter
+  // If count is less than 3, return ' '
+  // If statement at tend to see if count is high enough to win
+  private char CheckDownRightDiagonal(int row, int col){
+    int count = 1;
+    char charToMatch = board[row][col];
+
+    int currentRow = row;
+    int currentCol = col;
+
+    // While loop checks three things, first is that I am not already on the bottom row
+    // Second is that we are not already on the farthest left column
+    // third is that the next charachter matches the start peice
+    // If all those things work out, then we should inrease our counter and check the NEXT spot
+    while(
     (currentRow + 1 < board.length && currentCol - 1 >= 0)
     && board[currentRow + 1][currentCol - 1] == charToMatch
     ){
@@ -109,12 +167,23 @@ public class TicTacToe{
     // third is that the next charachter matches the start peice
     // If all those things work out, then we should inrease our counter and check the NEXT spot
     while(
-    (currentRow + 1 < board.length && currentCol - 1 >= 0)
-    && board[currentRow + 1][currentCol - 1] == charToMatch
+    (currentRow - 1 <= 0 && currentCol + 1 > board[0].length)
+    && board[currentRow - 1][currentCol + 1] == charToMatch
     ){
-        currentRow++;
-        currentCol--;
+        currentRow--;
+        currentCol++;
         count++;  
+    }
+
+    // Check if count is greater than or equal to 3, if so, turn player is winner
+    // Otherwise, there is no winner this turn
+    // Return either charToMatch or ' '
+
+    if(count >= 3){
+      return charToMatch;
+    }
+    else{
+      return ' ';
     }
           
     
@@ -122,4 +191,3 @@ public class TicTacToe{
     
   }
   
-}
