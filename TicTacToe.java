@@ -49,7 +49,18 @@ public class TicTacToe{
   // Also checks diagonally in both Directions to see if there is 3 in a row
   // 4 Options -> 4 "Helper Methods"
   private char CheckWinner(int row, int col){
-    
+    if(CheckVertical(row, col) != ' '){
+      return checkVertical(row, col);
+    }
+    if(CheckHorizontal(row, col) != ' '){
+      return checkHorizontal(row, col);
+    }
+    if(CheckUpRightDiagonal(row, col) != ' '){
+      return checkUpRightDiagonal(row, col);
+    }
+    if(CheckDownRightDiagonal(row, col) != ' '){
+      return checkDownRightDiagonal(row, col);
+    }
     
   }
   // In the COUMN placed, check all 3 spaces to see if they match for whoever's turn it is
@@ -188,6 +199,22 @@ public class TicTacToe{
           
     
     }
-    
-  }
+
+  
+private void DisplayBoard(){
+  System.out.println("  |   |  ");
+  System.out.println(" "+ board[0][0] + " | "+ board[0][1] +"  |  "+ board[0][2]);
+  System.out.println("  |   |  ");
+  System.out.println("---|---|---  ");
+  System.out.println("  |   |  ");
+  System.out.println(" "+ board[1][0] + " | "+ board[1][1] +"  |  "+ board[1][2]);
+  System.out.println("  |   |  ");
+  System.out.println("---|---|---  ");
+  System.out.println("  |   |  ");
+  System.out.println(" "+ board[2][0] + " | "+ board[2][1] +"  |  "+ board[2][2]);
+  System.out.println("  |   |  ");
+  
+  
+}
+}
   
