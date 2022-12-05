@@ -1,12 +1,45 @@
-import java.util.*;
+import java.util.Scanner;
 public class TicTacToe{
   private char [][] board;
   // When turn is 0, the X player is playing
   // When turn is 1, the 0 player is playing
   private int turn;
   
+public TicTacToe(){
+	turn = 0;
+}
+// Set up board
+// Let players take turn
+// After every turn, check for a winner or tie
+// Once there is a winner or the board is filled, the game should end
 
+public void PlayGame(){
+  Scanner input = new Scanner(System.in);
+  
+	while(true){
+		System.out.println("Enter a row number, then a column number to place a peice 0 -2");
+		int row = in.nextInt();
+		int col = in.nextInt();
+		if(PlacePeice(row, col)){
+			if(CheckWinner(row,col) != ' '){
+				if(CheckWinner(row, col) == 't'){
+					System.out.println("You tied!");
+				}
+				if(CheckWinner(row,col) == 'x'){
+					System.out.println("First Player Wins");
+				}
+				if(CheckWinner(row,col)){
+					System.out.println("Second Player Wins");
+				}
+				return;
+			}
+			DisplayBoard();
+		}
+	}
+	
+}
 
+  
 // Description: initializes the board variable to have empty spaces using the space charachter in a 3*3 grid
 
   private void SetUpBoard(){
@@ -41,6 +74,7 @@ public class TicTacToe{
   
     return avaliable;
   }
+	}
     
     
   
@@ -48,7 +82,7 @@ public class TicTacToe{
   // Ex: If someone chooses the center of the board, loop up, left, right for 3 in a row
   // Also checks diagonally in both Directions to see if there is 3 in a row
   // 4 Options -> 4 "Helper Methods"
-  private char CheckWinner(int row, int col){
+private char CheckWinner(int row, int col){
     if(CheckVertical(row, col) != ' '){
       return checkVertical(row, col);
     }
@@ -61,6 +95,18 @@ public class TicTacToe{
     if(CheckDownRightDiagonal(row, col) != ' '){
       return checkDownRightDiagonal(row, col);
     }
+    boolean filled = true;
+    for(int i = 0; i < board.length; i++){
+      for(int j = 0; j < board.length; j++){
+        if(board[i][j] == ' '){
+          filled = false;
+        }
+      }
+    }
+    if(filled){
+      return 't';
+    }
+    return ' ';
     
   }
   // In the COUMN placed, check all 3 spaces to see if they match for whoever's turn it is
@@ -77,7 +123,7 @@ public class TicTacToe{
   }
   
   
-  private char CheckHorizontal(int row, int col){
+private char CheckHorizontal(int row, int col){
     char charToMatch = board[row][col];
 
     for(int i =0; i < board[0].length; i++){
@@ -86,7 +132,7 @@ public class TicTacToe{
       }
     }
     return charToMatch;
-  } 
+} 
   // Using the ROW and COUMN of a placed peice, check down-left and 
   // Up-Right until we either reach the end of the board, or we run into a peice
   // That doesent match the place one
@@ -140,7 +186,7 @@ public class TicTacToe{
     }
           
     
-    }
+    
     
   }
   
@@ -215,6 +261,7 @@ private void DisplayBoard(){
   System.out.println("  |   |  ");
   
   
+}
 }
 }
   
