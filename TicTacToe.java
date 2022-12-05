@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 public class TicTacToe{
   private char [][] board;
   // When turn is 0, the X player is playing
@@ -14,7 +14,7 @@ public TicTacToe(){
 // Once there is a winner or the board is filled, the game should end
 
 public void PlayGame(){
-  Scanner input = new Scanner(System.in);
+  Scanner in = new Scanner(System.in);
   
 	while(true){
 		System.out.println("Enter a row number, then a column number to place a peice 0 -2");
@@ -28,7 +28,7 @@ public void PlayGame(){
 				if(CheckWinner(row,col) == 'x'){
 					System.out.println("First Player Wins");
 				}
-				if(CheckWinner(row,col)){
+				if(CheckWinner(row,col) == 'o'){
 					System.out.println("Second Player Wins");
 				}
 				return;
@@ -71,9 +71,9 @@ public void PlayGame(){
         board[row][col] = 'o';
         turn = 0; 
       }
+		}
   
     return avaliable;
-  }
 	}
     
     
@@ -84,16 +84,16 @@ public void PlayGame(){
   // 4 Options -> 4 "Helper Methods"
 private char CheckWinner(int row, int col){
     if(CheckVertical(row, col) != ' '){
-      return checkVertical(row, col);
+      return CheckVertical(row, col);
     }
     if(CheckHorizontal(row, col) != ' '){
-      return checkHorizontal(row, col);
+      return CheckHorizontal(row, col);
     }
     if(CheckUpRightDiagonal(row, col) != ' '){
-      return checkUpRightDiagonal(row, col);
+      return CheckUpRightDiagonal(row, col);
     }
     if(CheckDownRightDiagonal(row, col) != ' '){
-      return checkDownRightDiagonal(row, col);
+      return CheckDownRightDiagonal(row, col);
     }
     boolean filled = true;
     for(int i = 0; i < board.length; i++){
@@ -119,8 +119,9 @@ private char CheckWinner(int row, int col){
       if(board[i][col] != charToMatch){
         return ' ';
       }
+		}
     return charToMatch;
-  }
+	}
   
   
 private char CheckHorizontal(int row, int col){
@@ -263,5 +264,6 @@ private void DisplayBoard(){
   
 }
 }
-}
+
+
   
